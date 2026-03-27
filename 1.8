@@ -1,0 +1,41 @@
+interface Filterable {
+    void apply_filter(String filter_type);
+    void reset_filter();
+}
+
+class ImageProcessor implements Filterable {
+    @Override
+    public void apply_filter(String filter_type) {
+        System.out.println("Applying " + filter_type + " filter to pixels (Grayscale/Blur).");
+    }
+
+    @Override
+    public void reset_filter() {
+        System.out.println("Restoring original image dimensions and colors.");
+    }
+}
+
+class DataAnalyzer implements Filterable {
+    @Override
+    public void apply_filter(String filter_type) {
+        System.out.println("Filtering dataset rows where criteria is: " + filter_type);
+    }
+
+    @Override
+    public void reset_filter() {
+        System.out.println("Clearing data filters. Showing all " + 1000 + " records.");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Filterable img = new ImageProcessor();
+        Filterable data = new DataAnalyzer();
+
+        img.apply_filter("Gaussian Blur");
+        data.apply_filter("Age > 30");
+
+        img.reset_filter();
+        data.reset_filter();
+    }
+}
