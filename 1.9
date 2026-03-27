@@ -1,0 +1,21 @@
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        System.out.println("Two integers (5 + 10): " + calc.add(5, 10));
+        System.out.println("Three integers (5 + 10 + 15): " + calc.add(5, 10, 15));
+        System.out.println("Two doubles (5.5 + 10.2): " + calc.add(5.5, 10.2));
+    }
+}
