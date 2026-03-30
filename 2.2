@@ -1,0 +1,42 @@
+// 12. Payment Processing System using Abstract Class
+
+// Abstract class
+abstract class Payment {
+    // Abstract method
+    abstract void pay(double amount);
+}
+
+// Credit card payment class
+class CreditCardPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using Credit Card.");
+    }
+}
+
+// UPI payment class
+class UPIPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using UPI.");
+    }
+}
+
+// Net banking payment class
+class NetBankingPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid ₹" + amount + " using Net Banking.");
+    }
+}
+
+public class PaymentDemo {
+    public static void main(String[] args) {
+        // Creating references of abstract class
+        Payment p1 = new CreditCardPayment();
+        Payment p2 = new UPIPayment();
+        Payment p3 = new NetBankingPayment();
+
+        // Calling pay method
+        p1.pay(1500);
+        p2.pay(2500);
+        p3.pay(5000);
+    }
+}
