@@ -1,0 +1,62 @@
+// 11. Hierarchical Inheritance Example
+
+// Base class
+class Shape {
+    // Method to display general information
+    void display() {
+        System.out.println("This is a shape.");
+    }
+}
+
+// Circle class inheriting Shape
+class Circle extends Shape {
+    double radius;
+
+    // Constructor
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Method to calculate and display area of circle
+    void area() {
+        double result = 3.14 * radius * radius;
+        System.out.println("Area of Circle: " + result);
+    }
+}
+
+// Rectangle class inheriting Shape
+class Rectangle extends Shape {
+    double length, breadth;
+
+    // Constructor
+    Rectangle(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    // Method to calculate and display area of rectangle
+    void area() {
+        double result = length * breadth;
+        System.out.println("Area of Rectangle: " + result);
+    }
+}
+
+public class ShapeDemo {
+    public static void main(String[] args) {
+        // Creating circle object
+        Circle c = new Circle(5);
+
+        // Calling inherited and own methods
+        c.display();
+        c.area();
+
+        System.out.println();
+
+        // Creating rectangle object
+        Rectangle r = new Rectangle(4, 6);
+
+        // Calling inherited and own methods
+        r.display();
+        r.area();
+    }
+}
