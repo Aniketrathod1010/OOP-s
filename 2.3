@@ -1,0 +1,60 @@
+// 13. Employee Bonus Calculation using Runtime Polymorphism
+
+// Abstract class Employee
+abstract class Employee {
+    String name;
+    int id;
+    double salary;
+
+    // Constructor
+    Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    // Abstract method
+    abstract double calculateBonus();
+}
+
+// Manager class
+class Manager extends Employee {
+
+    // Constructor
+    Manager(String name, int id, double salary) {
+        super(name, id, salary);
+    }
+
+    // Bonus = 20% of salary
+    double calculateBonus() {
+        return salary * 0.20;
+    }
+}
+
+// Developer class
+class Developer extends Employee {
+    double projectIncentive;
+
+    // Constructor
+    Developer(String name, int id, double salary, double projectIncentive) {
+        super(name, id, salary);
+        this.projectIncentive = projectIncentive;
+    }
+
+    // Bonus = 10% of salary + project incentive
+    double calculateBonus() {
+        return (salary * 0.10) + projectIncentive;
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        // Runtime polymorphism using Employee reference
+        Employee e1 = new Manager("Rahul", 101, 50000);
+        Employee e2 = new Developer("Aman", 102, 40000, 5000);
+
+        // Calling overridden method
+        System.out.println("Manager Bonus: ₹" + e1.calculateBonus());
+        System.out.println("Developer Bonus: ₹" + e2.calculateBonus());
+    }
+}
