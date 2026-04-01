@@ -1,0 +1,19 @@
+class Bank {
+    final double interestRate = 6.5;
+
+    void calculateInterest(double amount) {
+        double interest = (amount * interestRate) / 100;
+        System.out.println("Amount: ₹" + amount);
+        System.out.println("Interest: ₹" + interest);
+    }
+}
+
+public class Q18 {
+    public static void main(String[] args) {
+        Bank b = new Bank();
+
+        b.calculateInterest(10000);
+        b.calculateInterest(25000);
+        b.calculateInterest(50000);
+    }
+}
