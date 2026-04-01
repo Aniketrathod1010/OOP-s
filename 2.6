@@ -1,0 +1,37 @@
+class Staff {
+    void work() {
+        System.out.println("Staff is working");
+    }
+}
+
+class Doctor extends Staff {
+    void work() {
+        System.out.println("Doctor treats patients");
+    }
+}
+
+class Nurse extends Staff {
+    void work() {
+        System.out.println("Nurse takes care of patients");
+    }
+}
+
+class Receptionist extends Staff {
+    void work() {
+        System.out.println("Receptionist manages appointments");
+    }
+}
+
+public class Q16 {
+    public static void main(String[] args) {
+        Staff[] staff = new Staff[3];
+
+        staff[0] = new Doctor();
+        staff[1] = new Nurse();
+        staff[2] = new Receptionist();
+
+        for (Staff s : staff) {
+            s.work();
+        }
+    }
+}
